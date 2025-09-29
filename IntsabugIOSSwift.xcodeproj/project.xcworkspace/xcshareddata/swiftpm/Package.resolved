@@ -1,0 +1,15 @@
+{
+  "originHash" : "b97bee0a516fad4f0d1dd41cace3e81a6d2fdcf31462170ecfa3f561427f7f20",
+  "pins" : [
+    {
+      "identity" : "instabug-sp",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Instabug/Instabug-SP",
+      "state" : {
+        "revision" : "ffcac93cb9e62af080889eaa4c291d289bf0fe22",
+        "version" : "15.1.1"
+      }
+    }
+  ],
+  "version" : 3
+}

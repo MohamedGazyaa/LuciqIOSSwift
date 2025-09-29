@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AAB5D5322E2FBBD70022D2B5 /* Instabug in Frameworks */ = {isa = PBXBuildFile; productRef = AAB5D5312E2FBBD70022D2B5 /* Instabug */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		AA09E3202E2BE76700A80F99 /* IntsabugIOSSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntsabugIOSSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAB5D5322E2FBBD70022D2B5 /* Instabug in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = IntsabugIOSSwift;
 			packageProductDependencies = (
+				AAB5D5312E2FBBD70022D2B5 /* Instabug */,
 			);
 			productName = IntsabugIOSSwift;
 			productReference = AA09E3202E2BE76700A80F99 /* IntsabugIOSSwift.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = AA09E3172E2BE76700A80F99;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				AAB5D5302E2FBBD70022D2B5 /* XCRemoteSwiftPackageReference "Instabug-SP" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AA09E3212E2BE76700A80F99 /* Products */;
 			projectDirPath = "";
@@ -324,6 +333,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AAB5D5302E2FBBD70022D2B5 /* XCRemoteSwiftPackageReference "Instabug-SP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Instabug/Instabug-SP";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AAB5D5312E2FBBD70022D2B5 /* Instabug */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAB5D5302E2FBBD70022D2B5 /* XCRemoteSwiftPackageReference "Instabug-SP" */;
+			productName = Instabug;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AA09E3182E2BE76700A80F99 /* Project object */;
 }
