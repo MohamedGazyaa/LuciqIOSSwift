@@ -8,11 +8,32 @@
 import SwiftUI
 
 struct SDKInitializationView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 0) {
+                    // Custom header (toolbar style)
+                    HStack {
+                        Spacer()
+                        Image("LuciqLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 140, height: 60)
+                            .clipped()
+                            .padding(.bottom,12)
+                        Spacer()
+                    }
+                    .frame(height: 55)
+                    .background(Color("PrimaryColor"))
+
+                    Spacer() // Your content area
+            Text("Hello World!")
+                .font(Font.custom("ABcArizonaFlare-Regular", size: 40))
+                    Spacer()
+                }
     }
 }
 
 #Preview {
     SDKInitializationView()
 }
+

@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct IntsabugIOSSwiftApp: App {
+struct LuciqIOSSwiftApp: App {
     var body: some Scene {
         WindowGroup {
             SDKInitializationView()

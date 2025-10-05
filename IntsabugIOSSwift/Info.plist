@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>ArizonaFlare-Regular.otf</string>
+		<string>ArizonaFlare-Bold.otf</string>
+		<string>ArizonaFlare-BoldItalic.otf</string>
+		<string>ArizonaFlare-Medium.otf</string>
+		<string>ArizonaFlare-MediumItalic.otf</string>
+		<string>ArizonaFlare-RegularItalic.otf</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict/>
+	</array>
+</dict>
+</plist>

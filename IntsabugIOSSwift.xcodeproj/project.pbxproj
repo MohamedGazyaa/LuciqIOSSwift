@@ -14,9 +14,22 @@
 		AA09E3202E2BE76700A80F99 /* IntsabugIOSSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntsabugIOSSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AA9ED1BC2E931E5C000368EB /* Exceptions for "IntsabugIOSSwift" folder in "IntsabugIOSSwift" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = AA09E31F2E2BE76700A80F99 /* IntsabugIOSSwift */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AA09E3222E2BE76700A80F99 /* IntsabugIOSSwift */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AA9ED1BC2E931E5C000368EB /* Exceptions for "IntsabugIOSSwift" folder in "IntsabugIOSSwift" target */,
+			);
 			path = IntsabugIOSSwift;
 			sourceTree = "<group>";
 		};
@@ -264,6 +277,8 @@
 				DEVELOPMENT_TEAM = VW7M8DWRZJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IntsabugIOSSwift/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Luciq Swift IOS";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -293,6 +308,8 @@
 				DEVELOPMENT_TEAM = VW7M8DWRZJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IntsabugIOSSwift/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Luciq Swift IOS";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
