@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>needs access to your microphone so you can attach voice notes.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>needs access to your photo library so you can attach images.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>ArizonaFlare-Regular.otf</string>

@@ -1,13 +1,13 @@
 {
-  "originHash" : "b97bee0a516fad4f0d1dd41cace3e81a6d2fdcf31462170ecfa3f561427f7f20",
+  "originHash" : "d6b0e4f865f64d243dfeaae4eba6e71a2b45c0a5b150ec71b2498288391b95a7",
   "pins" : [
     {
-      "identity" : "instabug-sp",
+      "identity" : "luciq-ios-sdk",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Instabug/Instabug-SP",
+      "location" : "https://github.com/luciqai/luciq-ios-sdk",
       "state" : {
-        "revision" : "ffcac93cb9e62af080889eaa4c291d289bf0fe22",
-        "version" : "15.1.1"
+        "revision" : "61c8897fcd11c21d5b9e24bb4d858dbc8a2af53d",
+        "version" : "18.0.0"
       }
     }
   ],

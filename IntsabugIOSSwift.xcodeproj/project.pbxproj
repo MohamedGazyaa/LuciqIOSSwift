@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AAB5D5322E2FBBD70022D2B5 /* Instabug in Frameworks */ = {isa = PBXBuildFile; productRef = AAB5D5312E2FBBD70022D2B5 /* Instabug */; };
+		AA9ED2372E9474C3000368EB /* Luciq in Frameworks */ = {isa = PBXBuildFile; productRef = AA9ED2362E9474C3000368EB /* Luciq */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAB5D5322E2FBBD70022D2B5 /* Instabug in Frameworks */,
+				AA9ED2372E9474C3000368EB /* Luciq in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 			);
 			name = IntsabugIOSSwift;
 			packageProductDependencies = (
-				AAB5D5312E2FBBD70022D2B5 /* Instabug */,
+				AA9ED2362E9474C3000368EB /* Luciq */,
 			);
 			productName = IntsabugIOSSwift;
 			productReference = AA09E3202E2BE76700A80F99 /* IntsabugIOSSwift.app */;
@@ -114,7 +114,7 @@
 			mainGroup = AA09E3172E2BE76700A80F99;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				AAB5D5302E2FBBD70022D2B5 /* XCRemoteSwiftPackageReference "Instabug-SP" */,
+				AA9ED2352E9474C3000368EB /* XCRemoteSwiftPackageReference "luciq-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AA09E3212E2BE76700A80F99 /* Products */;
@@ -199,7 +199,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -256,7 +256,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -352,21 +352,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AAB5D5302E2FBBD70022D2B5 /* XCRemoteSwiftPackageReference "Instabug-SP" */ = {
+		AA9ED2352E9474C3000368EB /* XCRemoteSwiftPackageReference "luciq-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Instabug/Instabug-SP";
+			repositoryURL = "https://github.com/luciqai/luciq-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 15.1.1;
+				minimumVersion = 18.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AAB5D5312E2FBBD70022D2B5 /* Instabug */ = {
+		AA9ED2362E9474C3000368EB /* Luciq */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AAB5D5302E2FBBD70022D2B5 /* XCRemoteSwiftPackageReference "Instabug-SP" */;
-			productName = Instabug;
+			package = AA9ED2352E9474C3000368EB /* XCRemoteSwiftPackageReference "luciq-ios-sdk" */;
+			productName = Luciq;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
