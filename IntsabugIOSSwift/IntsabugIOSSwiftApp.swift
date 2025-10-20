@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct LuciqIOSSwiftApp: App {
+    
+    @State private var sdkInitialized = false
+    
     var body: some Scene {
         WindowGroup {
-            SDKInitializationView()
+            
+            if sdkInitialized{
+                ProductsNavigationView()
+            }else{
+                SDKInitializationView(onSuccess: {sdkInitialized = true})
+            }
+            
         }
     }
 }

@@ -9,6 +9,9 @@ import SwiftUI
 
 struct SDKInitializationView: View {
     
+
+    var onSuccess: () -> Void
+    
     @State private var appToken = ""
     @State private var showAlert = false
     @State private var showAdvanced = false
@@ -27,7 +30,7 @@ struct SDKInitializationView: View {
         
         
         VStack(spacing: 0) {
-                    // Custom header (toolbar style)
+            
                     HStack {
                         Spacer()
                         Image("LuciqLogo")
@@ -41,7 +44,7 @@ struct SDKInitializationView: View {
                     .frame(height: 55)
                     .background(Color("PrimaryColor"))
 
-                    Spacer() // Your content area
+                    Spacer() 
             VStack( spacing: 15){
                 
                 Text("SDK initialization")
@@ -100,7 +103,10 @@ struct SDKInitializationView: View {
                 
                 Button(action: {
                                     let success = controller.handleSubmit(inputText: appToken, selectedEvents: selectedEvents)
-                                    if !success {
+                                    if success {
+                                        // Notify caller that initialization succeeded
+                                        onSuccess()
+                                    } else {
                                         showAlert = true
                                     }
                                 }) {
@@ -125,11 +131,10 @@ struct SDKInitializationView: View {
             .background(Color(.systemGray6))
             .cornerRadius(16)
             .padding(30)
+            
                     Spacer()
         }.background(Color("TextWhite"))
     }
 }
 
-#Preview {
-    SDKInitializationView()
-}
+
