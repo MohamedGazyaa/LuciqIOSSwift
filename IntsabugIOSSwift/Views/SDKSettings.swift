@@ -9,7 +9,27 @@ import SwiftUI
 
 struct SDKSettings: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 0) {
+
+            Spacer()
+            Text("SDK Settings Screen")
+            Spacer()
+        }
+        .navigationTitle("")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal){
+                Image("LuciqLogo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 140, height: 60)
+                    .clipped()
+                    .padding(.top,5)
+                    .padding(.bottom,12)
+            }
+        }
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarBackground(Color("PrimaryColor"), for: .navigationBar)
     }
 }
 
