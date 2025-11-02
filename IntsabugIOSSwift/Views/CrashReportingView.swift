@@ -149,7 +149,7 @@ struct ManualError: View {
             .padding(.top, 10)
 
             Button(action: {
-                //controller.reportManualError()
+                controller.reportManualError()
             }) {
                 Text("Report Error")
                     .font(Font.custom("ABCArizonaFlare-Medium", size: 18))

@@ -31,7 +31,7 @@ class CrashReportingController: ObservableObject {
     @Published var isForceRestartsEnabled = true //Force Restarts are enabled by default
     // Non‑fatal selections
     @Published var exceptionLevel: CrashLevel = .error //for report a manual exception
-    @Published var errorLevel: CrashLevel = .error   //for report a manual error
+    @Published var errorLevel: CrashLevel = .critical   //for report a manual error
     @Published var stackTraceMode: StackTraceMode = .full
     @Published var groupingString: String = "com.service.method.some_exception"
     @Published var isCustomFingerprintingEnabled = false
@@ -87,10 +87,37 @@ class CrashReportingController: ObservableObject {
     }
     
 
-    // Manual Error (you’ll wire level later if needed)
-    /*func reportManualError() {
+    // Manual Error
+    func reportManualError() {
+     
+     let domain = "com.service.method"
+     let code = 0
+     let error = NSError(domain: domain, code: code, userInfo: nil)
+     
+        if let nonfatal = CrashReporting.error(error) {
+            
+            //Custom fingerprinting
+            nonfatal.groupingString = self.groupingString
+            
+            //Select Level
+            switch errorLevel {
+            case .critical:     nonfatal.level = .critical
+            case .warning:      nonfatal.level = .warning
+            case .error:        nonfatal.level = .error
+            case .information:  nonfatal.level = .info
+            }
+            
+            //select stacktrace mode
+            switch stackTraceMode {
+            case .full:         nonfatal.stackTraceMode = .full
+            case .callerThread: nonfatal.stackTraceMode = .callerThread
+            }
+            
+            
+            nonfatal.report()
+        }
         
-    }*/
+    }
 
     // Fatal Crash
     func triggerFatal() {
