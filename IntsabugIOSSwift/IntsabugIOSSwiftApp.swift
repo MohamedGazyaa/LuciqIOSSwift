@@ -12,6 +12,23 @@ struct LuciqIOSSwiftApp: App {
     
     @State private var sdkInitialized = false
     
+    init() {
+                UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(named: "SecondaryColor")
+            let customFont = UIFont(name: "ABCArizonaFlare-Medium", size: 16) ?? UIFont.systemFont(ofSize: 16)
+
+                UISegmentedControl.appearance().setTitleTextAttributes([
+                    .foregroundColor: UIColor(named: "TextWhite") ?? .white,
+                    .font: customFont
+                ], for: .selected)
+
+                UISegmentedControl.appearance().setTitleTextAttributes([
+                    .foregroundColor: UIColor.black,
+                    .font: customFont
+                ], for: .normal)
+               
+        
+            }
+    
     var body: some Scene {
         WindowGroup {
             
