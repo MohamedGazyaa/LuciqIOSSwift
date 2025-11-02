@@ -10,6 +10,14 @@ import SwiftUI
 struct ProductsNavigationView: View {
     
     @StateObject var APMcontroller = APMController()
+    @StateObject var bugReportingController = BugReportingController()
+    @StateObject var crashReportingController = CrashReportingController()
+    @StateObject var apmController = APMController()
+    @StateObject var featureRequestsController = FeatureRequestsController()
+    @StateObject var sessionReplayController = SessionReplayController()
+    @StateObject var surveysController = SurveysController()
+
+    
     
     var body: some View {
         
@@ -33,7 +41,7 @@ struct ProductsNavigationView: View {
                     }
                 }
                 HStack (spacing: 12){
-                    NavigationLink(destination: BugReportingView()){
+                    NavigationLink(destination: BugReportingView(controller: bugReportingController)){
                         
                         Text("Bug Reporting")
                             .font(Font.custom("ABCArizonaFlare-Medium", size: 19))
