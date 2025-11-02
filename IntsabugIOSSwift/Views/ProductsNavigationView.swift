@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProductsNavigationView: View {
     
+    @StateObject var APMcontroller = APMController()
     @StateObject var bugReportingController = BugReportingController()
     @StateObject var crashReportingController = CrashReportingController()
     @StateObject var apmController = APMController()
@@ -68,7 +69,7 @@ struct ProductsNavigationView: View {
                     }
                 }
                 HStack (spacing: 12){
-                    NavigationLink(destination: APMView()){
+                    NavigationLink(destination: APMView(controller: APMcontroller)){
                         
                         Text("APM")
                             .font(Font.custom("ABCArizonaFlare-Medium", size: 19))
