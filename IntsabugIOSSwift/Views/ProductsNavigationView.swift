@@ -9,6 +9,13 @@ import SwiftUI
 
 struct ProductsNavigationView: View {
     
+    @StateObject var bugReportingController = BugReportingController()
+    @StateObject var crashReportingController = CrashReportingController()
+    //  @StateObject var apmController = APMController()
+    //  @StateObject var featureRequestsController = FeatureRequestsController()
+    //  @StateObject var sessionReplayController = SessionReplayController()
+    //  @StateObject var surveysController = SurveysController()
+    
     
     var body: some View {
         
@@ -32,7 +39,7 @@ struct ProductsNavigationView: View {
                     }
                 }
                 HStack (spacing: 12){
-                    NavigationLink(destination: BugReportingView()){
+                    NavigationLink(destination: BugReportingView(controller: bugReportingController)){
                         
                         Text("Bug Reporting")
                             .font(Font.custom("ABCArizonaFlare-Medium", size: 19))
@@ -45,7 +52,7 @@ struct ProductsNavigationView: View {
                             .padding(.horizontal,10)
                             
                     }
-                    NavigationLink(destination: CrashReportingView()){
+                    NavigationLink(destination: CrashReportingView(controller: crashReportingController)){
                         
                         Text("Crash Reporting")
                             .font(Font.custom("ABCArizonaFlare-Medium", size: 19))
@@ -126,10 +133,11 @@ struct ProductsNavigationView: View {
                     Image("LuciqLogo")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 140, height: 60)
                         .clipped()
                         .padding(.top,5)
-                        .padding(.bottom,12)
+                        .padding(.bottom,5)
+                        .frame(width: 145, height: 60)
+                        
                 }
             }
             .toolbarBackground(.visible, for: .navigationBar)

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA9ED2372E9474C3000368EB /* Luciq in Frameworks */ = {isa = PBXBuildFile; productRef = AA9ED2362E9474C3000368EB /* Luciq */; };
+		65A668F12EA90C410056325A /* Luciq in Frameworks */ = {isa = PBXBuildFile; productRef = 65A668F02EA90C410056325A /* Luciq */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA9ED2372E9474C3000368EB /* Luciq in Frameworks */,
+				65A668F12EA90C410056325A /* Luciq in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 			);
 			name = IntsabugIOSSwift;
 			packageProductDependencies = (
-				AA9ED2362E9474C3000368EB /* Luciq */,
+				65A668F02EA90C410056325A /* Luciq */,
 			);
 			productName = IntsabugIOSSwift;
 			productReference = AA09E3202E2BE76700A80F99 /* IntsabugIOSSwift.app */;
@@ -114,7 +114,7 @@
 			mainGroup = AA09E3172E2BE76700A80F99;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				AA9ED2352E9474C3000368EB /* XCRemoteSwiftPackageReference "luciq-ios-sdk" */,
+				65A668EF2EA90C410056325A /* XCRemoteSwiftPackageReference "luciq-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AA09E3212E2BE76700A80F99 /* Products */;
@@ -199,7 +199,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -256,7 +256,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -352,20 +352,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AA9ED2352E9474C3000368EB /* XCRemoteSwiftPackageReference "luciq-ios-sdk" */ = {
+		65A668EF2EA90C410056325A /* XCRemoteSwiftPackageReference "luciq-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/luciqai/luciq-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 18.0.0;
+				minimumVersion = 18.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AA9ED2362E9474C3000368EB /* Luciq */ = {
+		65A668F02EA90C410056325A /* Luciq */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AA9ED2352E9474C3000368EB /* XCRemoteSwiftPackageReference "luciq-ios-sdk" */;
+			package = 65A668EF2EA90C410056325A /* XCRemoteSwiftPackageReference "luciq-ios-sdk" */;
 			productName = Luciq;
 		};
 /* End XCSwiftPackageProductDependency section */
