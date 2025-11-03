@@ -16,7 +16,6 @@ struct ProductsNavigationView: View {
     @StateObject var featureRequestsController = FeatureRequestsController()
     @StateObject var sessionReplayController = SessionReplayController()
     @StateObject var surveysController = SurveysController()
-
     
     
     var body: some View {
@@ -110,7 +109,7 @@ struct ProductsNavigationView: View {
                             .padding(.horizontal,10)
                             
                     }
-                    NavigationLink(destination: FeatureRequestsView()){
+                    NavigationLink(destination: FeatureRequestsView(controller:featureRequestsController)){
                         
                         Text("Feature Requests")
                             .font(Font.custom("ABCArizonaFlare-Medium", size: 19))
