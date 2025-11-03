@@ -96,7 +96,7 @@ struct ProductsNavigationView: View {
                     }
                 }
                 HStack (spacing: 12) {
-                    NavigationLink(destination: SessionReplayView()){
+                    NavigationLink(destination: SessionReplayView(controller: sessionReplayController)){
                         
                         Text("Session Replay")
                             .font(Font.custom("ABCArizonaFlare-Medium", size: 19))
