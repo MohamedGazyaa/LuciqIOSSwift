@@ -53,7 +53,7 @@ struct ProductsNavigationView: View {
                             .padding(.horizontal,10)
                             
                     }
-                    NavigationLink(destination: CrashReportingView()){
+                    NavigationLink(destination: CrashReportingView(controller: crashReportingController)){
                         
                         Text("Crash Reporting")
                             .font(Font.custom("ABCArizonaFlare-Medium", size: 19))
@@ -96,7 +96,7 @@ struct ProductsNavigationView: View {
                     }
                 }
                 HStack (spacing: 12) {
-                    NavigationLink(destination: SessionReplayView()){
+                    NavigationLink(destination: SessionReplayView(controller: sessionReplayController)){
                         
                         Text("Session Replay")
                             .font(Font.custom("ABCArizonaFlare-Medium", size: 19))
