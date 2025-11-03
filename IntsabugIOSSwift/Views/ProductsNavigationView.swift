@@ -82,7 +82,7 @@ struct ProductsNavigationView: View {
                             .padding(.horizontal,10)
                             
                     }
-                    NavigationLink(destination: SurveysView()){
+                    NavigationLink(destination: SurveysView(controller: surveysController)){
                         
                         Text("Surveys")
                             .font(Font.custom("ABCArizonaFlare-Medium", size: 19))
