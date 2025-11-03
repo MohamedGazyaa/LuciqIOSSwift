@@ -10,13 +10,17 @@ import LuciqSDK
 
 class BugReportingController: ObservableObject{
     
-    @Published var isEnabled = true //
+    @Published var isEnabled = true
     @Published var emailOption = "Required"
     @Published var commentOption = "Optional"
     @Published var commentCharacterCount = ""
     @Published var attachmentOptions: Set<String> = ["📸"]
     @Published var autoScreenRecording = false
     @Published var autoScreenRecordingDuration = ""
+    @Published var viewHierarchyOption = false
+    @Published var proactiveBugReportingOption = false
+    @Published var extendedBugReportingOption = false
+    @Published var ebrFieldsOption = "Disabled"
     
     func handleStateChange(){
         if isEnabled {
@@ -122,7 +126,7 @@ class BugReportingController: ObservableObject{
     
     func applySettings(
         emailOption: String, commentOption: String, minCharacter: String, attachmentsTypes: Set<String>, autoScreenRecording: Bool,
-        autoScreenRecordingDuration: String
+        autoScreenRecordingDuration: String, viewHierarchy1: Bool, proactiveBugReportingState: Bool, extendedBugReportingState: Bool, ebrFields: String
     ){
         
         if(emailOption != "Required" && emailOption != self.emailOption){
@@ -145,6 +149,16 @@ class BugReportingController: ObservableObject{
         }
         if(autoScreenRecording && autoScreenRecordingDuration != self.autoScreenRecordingDuration){
             applyAutoScreenRecordingDuration(duration: autoScreenRecordingDuration)
+        }
+        
+        if(viewHierarchy1 != self.viewHierarchyOption){
+            applyViewHierarchySettings(state: viewHierarchy1)
+        }
+        if(proactiveBugReportingState != self.proactiveBugReportingOption){
+            applyProactiveBugReportingSettings(state: proactiveBugReportingState)
+        }
+        if(ebrFields != self.ebrFieldsOption){
+            applyExtendedBugReportingSettings(State: extendedBugReportingState, Fields: ebrFields)
         }
         
     }
@@ -185,6 +199,48 @@ class BugReportingController: ObservableObject{
                 self.autoScreenRecordingDuration = duration
             }
         }
+    }
+    
+    func applyViewHierarchySettings(state: Bool){
+        BugReporting.shouldCaptureViewHierarchy = state
+        self.viewHierarchyOption = state
+    }
+    
+    func applyProactiveBugReportingSettings(state: Bool){
+        if(state){
+            let configurations = ProactiveReportingConfigurations()
+            configurations.enabled = true
+            configurations.gapBetweenModals = 2
+            configurations.modalDelayAfterDetection = 60
+            BugReporting.setProactiveReportingConfigurations(configurations)
+            self.proactiveBugReportingOption = state
+        }else{
+            let configurations = ProactiveReportingConfigurations()
+            configurations.enabled = false
+            configurations.gapBetweenModals = 2
+            configurations.modalDelayAfterDetection = 60
+            BugReporting.setProactiveReportingConfigurations(configurations)
+            self.proactiveBugReportingOption = state
+        }
+    }
+    
+    func applyExtendedBugReportingSettings(State: Bool, Fields: String){
+        
+        if(State){
+            if(Fields == "Required"){
+                BugReporting.extendedBugReportMode = .enabledWithRequiredFields
+                self.ebrFieldsOption = "Required"
+            }else if(Fields == "Optional"){
+                BugReporting.extendedBugReportMode = .enabledWithOptionalFields
+                self.ebrFieldsOption = "Optional"
+            }
+            self.extendedBugReportingOption = true
+        }else{
+            BugReporting.extendedBugReportMode = .disabled
+            self.extendedBugReportingOption = false
+            self.ebrFieldsOption = "Disabled"
+        }
+        
     }
     
     func applyAttachmentOptions(attachments:Set<String>){

@@ -179,13 +179,17 @@ struct PromptOptions: View {
 struct AdvancedSettings: View {
     
     @ObservedObject var controller: BugReportingController
-    @State private var isExpanded = true
+    @State private var isExpanded = false
     @State private var selectedEmailOption : String
     @State private var selectedCommentOption :String
     @State private var commentsCharacterCount : String
     @State private var selectedAttachmentOptions: Set<String>
     @State private var selectedAutoScreenRecordingOption: Bool
     @State private var autoScreenRecordingDuration: String
+    @State private var viewHierarchySelection: Bool
+    @State private var proactiveBugReportingSelection: Bool
+    @State private var extendedBugReportingSelection: Bool
+    @State private var ebrFieldsSelection: String
     
     init(controller: BugReportingController) {
             self.controller = controller
@@ -196,6 +200,10 @@ struct AdvancedSettings: View {
             _selectedAttachmentOptions = State(initialValue: controller.attachmentOptions)
         _selectedAutoScreenRecordingOption = State(initialValue: controller.autoScreenRecording)
         _autoScreenRecordingDuration = State(initialValue: controller.autoScreenRecordingDuration)
+        _viewHierarchySelection = State(initialValue: controller.viewHierarchyOption)
+        _proactiveBugReportingSelection = State(initialValue: controller.proactiveBugReportingOption)
+        _extendedBugReportingSelection = State(initialValue: controller.extendedBugReportingOption)
+        _ebrFieldsSelection = State(initialValue: controller.ebrFieldsOption)
         }
     
     private let attachmentOptions = ["📸","🖼️","🎥","Extra 📸"]
@@ -401,6 +409,99 @@ struct AdvancedSettings: View {
                         .padding(.top,10)
                     }
                     
+                    HStack(spacing:50){
+                        Text("View Hierarchy:")
+                            .font(Font.custom("ABCArizonaFlare-Medium", size: 18))
+                            .frame(maxWidth: 120, alignment: .leading)
+                        
+                        HStack(spacing:7){
+                           
+                            RadioButton(label: "Enabled", isSelected: viewHierarchySelection == true) {
+                                if(viewHierarchySelection){
+                                    viewHierarchySelection = false
+                                }else{
+                                    viewHierarchySelection = true
+                                }
+                            }
+                            RadioButton(label: "Disabled", isSelected: viewHierarchySelection == false) {
+                                if(!viewHierarchySelection){
+                                    viewHierarchySelection = true
+                                }else{
+                                    viewHierarchySelection = false
+                                }
+                            }
+                        }
+                        .frame(maxWidth: 200, alignment: .leading)
+
+                        
+                    }
+                    .padding(.horizontal)
+                    .padding(.top,10)
+                    
+                    HStack(spacing:50){
+                        Text("Proactive Bug Reporting:")
+                            .font(Font.custom("ABCArizonaFlare-Medium", size: 18))
+                            .frame(maxWidth: 120, alignment: .leading)
+                        
+                        HStack(spacing:7){
+                           
+                            RadioButton(label: "Enabled", isSelected: proactiveBugReportingSelection == true) {
+                                if(proactiveBugReportingSelection){
+                                    proactiveBugReportingSelection = false
+                                }else{
+                                    proactiveBugReportingSelection = true
+                                }
+                            }
+                            RadioButton(label: "Disabled", isSelected: proactiveBugReportingSelection == false) {
+                                if(!proactiveBugReportingSelection){
+                                    proactiveBugReportingSelection = true
+                                }else{
+                                    proactiveBugReportingSelection = false
+                                }
+                            }
+                        }
+                        .frame(maxWidth: 200, alignment: .leading)
+
+                        
+                    }
+                    .padding(.horizontal)
+                    .padding(.top,10)
+                    
+                    HStack(spacing:50){
+                        Text("Extended Bug Reporting:")
+                            .font(Font.custom("ABCArizonaFlare-Medium", size: 18))
+                            .frame(maxWidth: 120, alignment: .leading)
+                        
+                        HStack(spacing:7){
+                           
+                            RadioButton(label: "Enabled", isSelected: extendedBugReportingSelection == true) {
+                                if(extendedBugReportingSelection){
+                                    extendedBugReportingSelection = false
+                                    ebrFieldsSelection = "Disabled"
+                                }else{
+                                    extendedBugReportingSelection = true
+                                    ebrFieldsSelection = "Optional"
+                                }
+                            }
+                            if(extendedBugReportingSelection){
+                                RadioButton(label: "Required Fields", isSelected: ebrFieldsSelection == "Required") {
+                                    if(ebrFieldsSelection == "Required"){
+                                        ebrFieldsSelection = "Optional"
+                                    }else{
+                                        ebrFieldsSelection = "Required"
+                                    }
+                                }
+                            }
+                            
+                        }
+                        .frame(maxWidth: 200, alignment: .leading)
+
+                        
+                    }
+                    .padding(.horizontal)
+                    .padding(.top,10)
+
+                    
                     Button(action: {
                         controller.applySettings(
                             emailOption: selectedEmailOption,
@@ -408,7 +509,11 @@ struct AdvancedSettings: View {
                             minCharacter: commentsCharacterCount,
                             attachmentsTypes: selectedAttachmentOptions,
                             autoScreenRecording: selectedAutoScreenRecordingOption,
-                            autoScreenRecordingDuration: autoScreenRecordingDuration
+                            autoScreenRecordingDuration: autoScreenRecordingDuration,
+                            viewHierarchy1: viewHierarchySelection,
+                            proactiveBugReportingState: proactiveBugReportingSelection,
+                            extendedBugReportingState: extendedBugReportingSelection,
+                            ebrFields: ebrFieldsSelection
                         )
                                         }
                                     ) {
@@ -436,23 +541,23 @@ struct AdvancedSettings: View {
     }
 }
 
-    struct RadioButton: View {
-        var label: String
-        var isSelected: Bool
-        var action: () -> Void
+struct RadioButton: View {
+    var label: String
+    var isSelected: Bool
+    var action: () -> Void
 
-        var body: some View {
-            Button(action: action) {
-                HStack {
-                    Image(systemName: isSelected ? "largecircle.fill.circle" : "circle")
-                        .foregroundColor(isSelected ? Color("PrimaryColor") : .gray)
-                    Text(label)
-                        .font(Font.custom("ABCArizonaFlare-Regular", size: 16))
-                }
+    var body: some View {
+        Button(action: action) {
+            HStack {
+                Image(systemName: isSelected ? "largecircle.fill.circle" : "circle")
+                    .foregroundColor(isSelected ? Color("PrimaryColor") : .gray)
+                Text(label)
+                    .font(Font.custom("ABCArizonaFlare-Regular", size: 15))
             }
-            .buttonStyle(.plain)
         }
+        .buttonStyle(.plain)
     }
+}
 
 
 #Preview {

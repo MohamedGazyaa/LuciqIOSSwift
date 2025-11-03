@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ProductsNavigationView: View {
     
+    @StateObject var APMcontroller = APMController()
     @StateObject var bugReportingController = BugReportingController()
     @StateObject var crashReportingController = CrashReportingController()
-    //  @StateObject var apmController = APMController()
-    //  @StateObject var featureRequestsController = FeatureRequestsController()
-    //  @StateObject var sessionReplayController = SessionReplayController()
-    //  @StateObject var surveysController = SurveysController()
+    @StateObject var apmController = APMController()
+    @StateObject var featureRequestsController = FeatureRequestsController()
+    @StateObject var sessionReplayController = SessionReplayController()
+    @StateObject var surveysController = SurveysController()
     
     
     var body: some View {
@@ -67,7 +68,7 @@ struct ProductsNavigationView: View {
                     }
                 }
                 HStack (spacing: 12){
-                    NavigationLink(destination: APMView()){
+                    NavigationLink(destination: APMView(controller: APMcontroller)){
                         
                         Text("APM")
                             .font(Font.custom("ABCArizonaFlare-Medium", size: 19))
@@ -80,7 +81,7 @@ struct ProductsNavigationView: View {
                             .padding(.horizontal,10)
                             
                     }
-                    NavigationLink(destination: SurveysView()){
+                    NavigationLink(destination: SurveysView(controller: surveysController)){
                         
                         Text("Surveys")
                             .font(Font.custom("ABCArizonaFlare-Medium", size: 19))
@@ -108,7 +109,7 @@ struct ProductsNavigationView: View {
                             .padding(.horizontal,10)
                             
                     }
-                    NavigationLink(destination: FeatureRequestsView()){
+                    NavigationLink(destination: FeatureRequestsView(controller:featureRequestsController)){
                         
                         Text("Feature Requests")
                             .font(Font.custom("ABCArizonaFlare-Medium", size: 19))
