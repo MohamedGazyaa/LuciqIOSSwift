@@ -136,3 +136,5 @@ struct SDKInitializationView: View {
         }.background(Color("TextWhite"))
     }
 }
+
+
