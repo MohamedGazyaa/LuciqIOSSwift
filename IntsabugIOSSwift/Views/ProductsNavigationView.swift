@@ -53,7 +53,7 @@ struct ProductsNavigationView: View {
                             .padding(.horizontal,10)
                             
                     }
-                    NavigationLink(destination: CrashReportingView()){
+                    NavigationLink(destination: CrashReportingView(controller: crashReportingController)){
                         
                         Text("Crash Reporting")
                             .font(Font.custom("ABCArizonaFlare-Medium", size: 19))
@@ -134,10 +134,11 @@ struct ProductsNavigationView: View {
                     Image("LuciqLogo")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 140, height: 60)
                         .clipped()
                         .padding(.top,5)
-                        .padding(.bottom,12)
+                        .padding(.bottom,5)
+                        .frame(width: 145, height: 60)
+                        
                 }
             }
             .toolbarBackground(.visible, for: .navigationBar)
