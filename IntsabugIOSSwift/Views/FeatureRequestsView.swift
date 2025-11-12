@@ -21,7 +21,7 @@ struct FeatureRequestsView: View {
     }
     var body: some View {
         
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading,spacing: 25) {
             
             HStack(spacing: 0) {
                 Text("Feature Requests:")
@@ -43,119 +43,110 @@ struct FeatureRequestsView: View {
             if controller.isEnabled {
                 ScrollView {
                     
-                    
-                    Button(action: {
-                        controller.showFeatureRequest()}
-                    ){
-                        Text("Show Feature Requests")
-                            .font(Font.custom("ABCArizonaFlare-Medium", size: 18))
-                            .foregroundColor(Color("TextGray"))
-                            .padding()
-                            .background(Color("SecondaryColor"))
-                            .cornerRadius(25)
-                            .padding()
-                    }
-                    .padding(.top,10)
-                    
-                    
-                    Text("Email field for new requests")
-                        .font(Font.custom("ABCArizonaFlare-Bold", size: 27))
-                        .foregroundColor(Color("PrimaryColor")).padding(.top,30)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    Text("By Default, a user's email address is required to submit a new feature request")
-                        .font(Font.custom("ABCArizonaFlare-medium", size: 15))
-                        .foregroundColor(Color("TextGray")).padding(.top,5)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    HStack(spacing:50){
-                        Text("Email Required:")
-                            .font(Font.custom("ABCArizonaFlare-Medium", size: 18))
-                            .frame(maxWidth: 130, alignment: .leading)
-                            .padding(.top,10)
-                        
-                        HStack(spacing:7){
-                            
-                            RadioButton(label: "Enabled", isSelected: selectedEmailFieldForNew == true) {
-                                if(selectedEmailFieldForNew){
-                                    selectedEmailFieldForNew = false
-                                }else{
-                                    selectedEmailFieldForNew = true
-                                }
-                            }
-                            RadioButton(label: "Disabled", isSelected: selectedEmailFieldForNew == false) {
-                                if(!selectedEmailFieldForNew){
-                                    selectedEmailFieldForNew = true
-                                }else{
-                                    selectedEmailFieldForNew = false
-                                }
-                            }
+                    VStack(spacing:25){
+                        Button(action: {
+                            controller.showFeatureRequest()}
+                        ){
+                            Text("Show Feature Requests")
+                                .font(Font.custom("ABCArizonaFlare-Medium", size: 18))
+                                .foregroundColor(Color("TextGray"))
+                                .padding()
+                                .background(Color("SecondaryColor"))
+                                .cornerRadius(25)
+                                .padding()
                         }
-                        .frame(maxWidth: 200, alignment: .leading)
-                        
                         .padding(.top,10)
-                    }
-                    
-                    
-                    
-                    Text("Email field for Comments on existing requests")
-                        .font(Font.custom("ABCArizonaFlare-Bold", size: 27))
-                        .foregroundColor(Color("PrimaryColor")).padding(.top,30)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    Text("By Default, a user's email address is required to submit a new comment to a feature request")
-                        .font(Font.custom("ABCArizonaFlare-medium", size: 15))
-                        .foregroundColor(Color("TextGray")).padding(.top,5)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    HStack(spacing:50){
-                        Text("Email Required:")
-                            .font(Font.custom("ABCArizonaFlare-Medium", size: 18))
-                            .frame(maxWidth: 130, alignment: .leading)
-                            .padding(.top,10)
                         
-                        HStack(spacing:7){
+                        VStack(alignment: .leading, spacing:10){
+                            Text("Email field for new requests")
+                                .font(Font.custom("ABCArizonaFlare-Bold", size: 25))
+                                .foregroundColor(Color("PrimaryColor")).padding(.top,30)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                             
-                            RadioButton(label: "Enabled", isSelected: selectedCommentOption == true) {
-                                if(selectedCommentOption){
-                                    selectedCommentOption = false
-                                }else{
-                                    selectedCommentOption = true
+                            HStack(spacing:50){
+                                Text("Email Required:")
+                                    .font(Font.custom("ABCArizonaFlare-Medium", size: 18))
+                                    .frame(maxWidth: 130, alignment: .leading)
+                                    .padding(.top,10)
+                                
+                                HStack(spacing:7){
+                                    
+                                    RadioButton(label: "Enabled", isSelected: selectedEmailFieldForNew == true) {
+                                        if(selectedEmailFieldForNew){
+                                            selectedEmailFieldForNew = false
+                                        }else{
+                                            selectedEmailFieldForNew = true
+                                        }
+                                    }
+                                    RadioButton(label: "Disabled", isSelected: selectedEmailFieldForNew == false) {
+                                        if(!selectedEmailFieldForNew){
+                                            selectedEmailFieldForNew = true
+                                        }else{
+                                            selectedEmailFieldForNew = false
+                                        }
+                                    }
                                 }
+                                .frame(maxWidth: 200, alignment: .leading)
+                                .padding(.top,10)
                             }
-                            RadioButton(label: "Disabled", isSelected: selectedCommentOption == false) {
-                                if(!selectedCommentOption){
-                                    selectedCommentOption = true
-                                }else{
-                                    selectedCommentOption = false
-                                }
-                            }
+                            .padding(.horizontal, 10)
                         }
-                        .frame(maxWidth: 200, alignment: .leading)
-                        .padding(.top,10)
+                        VStack(alignment: .leading, spacing:10){
+                            
+                            Text("Email field for Comments on existing requests")
+                                .font(Font.custom("ABCArizonaFlare-Bold", size: 25))
+                                .foregroundColor(Color("PrimaryColor"))
+                                .padding(.trailing,10)
+                                .padding(.top, 30)
+                            
+                            HStack(spacing:50){
+                                Text("Email Required:")
+                                    .font(Font.custom("ABCArizonaFlare-Medium", size: 18))
+                                    .frame(maxWidth: 130, alignment: .leading)
+                                    .padding(.top,10)
+                                
+                                HStack(spacing:7){
+                                    
+                                    RadioButton(label: "Enabled", isSelected: selectedCommentOption == true) {
+                                        if(selectedCommentOption){
+                                            selectedCommentOption = false
+                                        }else{
+                                            selectedCommentOption = true
+                                        }
+                                    }
+                                    RadioButton(label: "Disabled", isSelected: selectedCommentOption == false) {
+                                        if(!selectedCommentOption){
+                                            selectedCommentOption = true
+                                        }else{
+                                            selectedCommentOption = false
+                                        }
+                                    }
+                                }
+                                .frame(maxWidth: 200, alignment: .leading)
+                                .padding(.top,10)
+                            }
+                            .padding(10)
+                            
+                            Button(action: {
+                                controller.applySettings(EmailFieldForNew: selectedEmailFieldForNew, EmailCommentOption: selectedCommentOption)}
+                                   
+                            ) {
+                                Text("Save Changes")
+                                    .font(Font.custom("ABCArizonaFlare-Medium", size: 18))
+                                    .foregroundColor(Color("TextGray"))
+                                    .padding()
+                                    .background(Color("SecondaryColor"))
+                                    .cornerRadius(25)
+                                    .padding()
+                            }
+                            .padding(.top,10)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                        }
                     }
-                    
-                    Button(action: {
-                        controller.applySettings(EmailFieldForNew: selectedEmailFieldForNew, EmailCommentOption: selectedCommentOption)}
-                           
-                    ) {
-                        Text("Save Changes")
-                            .font(Font.custom("ABCArizonaFlare-Medium", size: 18))
-                            .foregroundColor(Color("TextGray"))
-                            .padding()
-                            .background(Color("SecondaryColor"))
-                            .cornerRadius(25)
-                            .padding()
-                    }
-                    .padding(.top,10)
-                    
+                    .padding(10)
                 }
-                
             }
-            
         }
-        
-        
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
@@ -173,7 +164,6 @@ struct FeatureRequestsView: View {
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarBackground(Color("PrimaryColor"), for: .navigationBar)
     }
-    
 }
     #Preview {
         FeatureRequestsView(controller: FeatureRequestsController())

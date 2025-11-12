@@ -51,31 +51,29 @@ class APMController: ObservableObject {
     //Each function calls a Luciq API
     
     func ApplyColdAppLaunchSettings(state: Bool){
-                APM.coldAppLaunchEnabled = state
-                        self.ColdApplaunchOption = state
+        APM.coldAppLaunchEnabled = state
+        self.ColdApplaunchOption = state
                 }
     func ApplyHotAppLaunchSettings(state: Bool){
         APM.hotAppLaunchEnabled = state
-                self.HotApplaunchOption = state
+        self.HotApplaunchOption = state
         }
 
     func ApplyUIHangsSettings(state: Bool){
-         APM.uiHangsEnabled = state
-                self.UIHangsOption = state
+        APM.uiHangsEnabled = state
+        self.UIHangsOption = state
         }
     
     func ApplyScreenLoadingSettings(state: Bool){
         APM.screenLoadingEnabled  = state
-                self.ScreenLoadingOption = state
+        self.ScreenLoadingOption = state
         }
     
     //Not sure if this is correct
     
     func ApplyWebviewsSettings(state: Bool){
-        
         APM.webViewTrackingEnabled  = state
         self.WebviewsOption = state
-        
     }
         
 }
