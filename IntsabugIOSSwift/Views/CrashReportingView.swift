@@ -42,6 +42,7 @@ struct CrashReportingView: View {
                         
                         
                     }
+                    .padding(10)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
@@ -91,7 +92,7 @@ struct ManualException: View {
             
             //Report Manual Exception with Level Selection
             Text("Report a Manual Exception")
-                .font(Font.custom("ABCArizonaFlare-Bold", size: 30))
+                .font(Font.custom("ABCArizonaFlare-Bold", size: 25))
                 .foregroundColor(Color("PrimaryColor"))
 
             Text("Level:")
@@ -131,7 +132,7 @@ struct ManualError: View {
             
             //Report Manual Error with Level Selection
             Text("Report a Manual Error")
-                .font(Font.custom("ABCArizonaFlare-Bold", size: 30))
+                .font(Font.custom("ABCArizonaFlare-Bold", size: 25))
                 .foregroundColor(Color("PrimaryColor"))
 
             Text("Level:")
@@ -171,7 +172,7 @@ struct FatalCrash: View {
             
             //Report Manual Error with Level Selection
             Text("Report a Fatal Crash")
-                .font(Font.custom("ABCArizonaFlare-Bold", size: 30))
+                .font(Font.custom("ABCArizonaFlare-Bold", size: 25))
                 .foregroundColor(Color("PrimaryColor"))
 
 

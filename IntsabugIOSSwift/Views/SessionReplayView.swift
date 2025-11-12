@@ -45,6 +45,7 @@ struct SessionReplayView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         }
+
         .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -101,7 +102,7 @@ struct SessionReplaySettings: View {
     var body: some View {
         VStack(spacing: 10) {
             Text("Session Replay Settings:")
-                .font(Font.custom("ABCArizonaFlare-Bold", size: 30))
+                .font(Font.custom("ABCArizonaFlare-Bold", size: 25))
                 .foregroundColor(Color("PrimaryColor"))
                 .padding(.horizontal)
 

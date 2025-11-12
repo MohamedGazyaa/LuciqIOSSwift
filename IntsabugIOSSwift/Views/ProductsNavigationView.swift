@@ -16,6 +16,7 @@ struct ProductsNavigationView: View {
     @StateObject var featureRequestsController = FeatureRequestsController()
     @StateObject var sessionReplayController = SessionReplayController()
     @StateObject var surveysController = SurveysController()
+    @StateObject var sdkSettingsController = SDKSettingsController()
     
     
     var body: some View {
@@ -27,7 +28,7 @@ struct ProductsNavigationView: View {
                 Spacer()
                 
                 HStack {
-                    NavigationLink(destination: SDKSettings()){
+                    NavigationLink(destination: SDKSettings(controller: sdkSettingsController)){
                         
                         Text("SDK Settings")
                             .font(Font.custom("ABCArizonaFlare-Medium", size: 20))
